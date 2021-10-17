@@ -1,0 +1,44 @@
+.site-footer {
+	width: 100%;
+	height: 100vh;
+	color: #fff;
+
+	background-color: #022c46;
+	.site-footer__upper {
+		height: 80%;
+		h2 {
+			margin-top: 10vh;
+		}
+		.info {
+			position: relative;
+			.bg-color {
+				background-color: #012237;
+				position: absolute;
+				top: 0;
+				right: -7.5vw;
+				width: 30vw;
+				height: 80vh;
+                opacity: 0.5;
+			}
+		}
+	}
+	.site-footer__bottom {
+		background-color: #012237;
+		height: 20vh;
+		.site-footer__bottom__info {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.site-footer__social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 20vh;
+			background-color: #022c46 !important;
+			i {
+				margin: 0 10px;
+			}
+		}
+	}
+}
