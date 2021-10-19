@@ -29,14 +29,14 @@
 						</div>			         
        			        <ul v-for="item in nav" :key="item.id">
 					        <li>
-					  			<nuxt-link exact :to="item.link" class="hovered">{{item.title}}</nuxt-link>        		
+					  			<nuxt-link exact :to="`/v/${item.link}`" class="hovered">{{item.title}}</nuxt-link>        		
 					        </li>
 					    </ul>
 				    </v-toolbar-items>
 				    <v-spacer />
 		      	<div class="d-flex">
-					    <v-list-item v-if="auth" @click="logout" class="hidden-sm-and-down" link><span class="auth grey--text font-weight-bold">Logout</span></v-list-item>
-					    <v-list-item v-else class="hidden-sm-and-down" link to="/auth"><span class="auth grey--text font-weight-bold">Login / Register</span></v-list-item>
+					    <v-list-item v-if="auth" @click="logout" class="hidden-sm-and-down" link><span class="auth grey--text font-weight-bold"><v-icon>mdi-logout</v-icon>Logout</span></v-list-item>
+					    <v-list-item v-else class="hidden-sm-and-down" link to="/v/auth"><span class="auth grey--text font-weight-bold">Login / Register</span></v-list-item>
 			    </div>
 				    <v-app-bar-nav-icon 
 				    	@click="drawer = !drawer"
@@ -52,8 +52,8 @@
 
 				        </v-list>
 				        <v-list class="text-start">
-				        	 <v-list-item v-if="auth" @click="logout"><span class="auth grey--text font-weight-bold">Logout</span></v-list-item>
-					    	<v-list-item v-else link to="/auth"><span class="auth font-weight-bold grey--text">Login / Register</span></v-list-item>
+				        	 <v-list-item v-if="auth" @click="logout"><span class="auth grey--text font-weight-bold"><v-icon>mdi-logout</v-icon>Logout</span></v-list-item>
+					    	<v-list-item v-else link to="/v/auth"><span class="auth font-weight-bold grey--text">Login / Register</span></v-list-item>
 				        </v-list>
 		      	</v-navigation-drawer>
 	    </nav>
@@ -68,42 +68,42 @@
 					{
 						id: 1,
 						title: 'Home',
-						link: '/' 
+						link: '' 
 					},
 					{
 						id: 2,
 						title: 'Pages',
-						link: '/pages' 
+						link: 'pages' 
 					},
 					{
 						id: 3,
 						title: 'Courses',
-						link: '/courses' 
+						link: 'courses' 
 					},
 					{
 						id: 4,
 						title: 'Teachers',
-						link: '/teachers'
+						link: 'teachers'
 					},
 					{
 						id: 5,
 						title: 'News',
-						link: '/news' 
+						link: 'news' 
 					},
 					{
 						id: 6,
 						title: 'Contact',
-						link: '/contact' 
+						link: 'contact' 
 					},
 					{
 						id: 7,
 						title: 'Profile',
-						link: '/profile'
+						link: 'profile'
 					},
 					{
 						id: 8,
 						title: 'Books',
-						link: '/books'
+						link: 'books'
 					}
 				],
 				auth: false
@@ -111,11 +111,11 @@
 		},
 		methods:{
 			async logout(){
-				await this.$axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+				await this.$axios.post('https://actions.uz/api/token/refresh/', {
 					refresh: this.$auth.$storage.getLocalStorage('refreshToken')
 				})
 				.then(res => {
-	        	this.$router.push('/auth')
+	        	this.$router.push('/v/auth')
 						this.$auth.$storage.removeLocalStorage('refreshToken')
 						this.$auth.$storage.removeLocalStorage('token')
 

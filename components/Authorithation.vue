@@ -175,34 +175,34 @@
 		},
 		methods: {
 			async submitForm(){      
-  				await this.$axios.post('/student-create/', this.form) 
+  				await this.$axios.post('https://actions.uz/api/student-create/', this.form) 
             .catch(err => {
               console.log(err)
               this.$nuxt.$emit('auth', false)
             })
-          await this.$axios.post('/token/', {
+          await this.$axios.post('https://actions.uz/api/token/', {
                 username: this.form.userlogin,
                 password: this.form.password
               }).then(res => {        
-                this.$router.push('/profile')      
+                this.$router.push('/v/profile')      
                 this.$auth.$storage.setLocalStorage("token", res.data.access)
                 this.$auth.$storage.setLocalStorage("refreshToken", res.data.refresh)
               })
 
 			},
       async login(){
-          await this.$axios.post('/token/', this.loginForm)
+          await this.$axios.post('https://actions.uz/api/token/', this.loginForm)
             .then(res => {
               this.$auth.$storage.setLocalStorage("token", res.data.access)
               this.$auth.$storage.setLocalStorage("refreshToken", res.data.refresh)
-              this.$router.push('/profile')
+              this.$router.push('/v/profile')
               console.log(this.$auth.storage.getLocalStorage('token'))
             }).catch(err => {
               this.$nuxt.$emit('auth', false)
             })
       },
       async getEducenters(){        
-        this.$axios.get('/educenter-view/')
+        this.$axios.get('https://actions.uz/api/educenter-view/')
           .then(res => {
             this.educenters = res.data
           })

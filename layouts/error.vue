@@ -33,6 +33,11 @@ export default {
     return {
       title
     }
+  },
+  mounted(){
+    if(this.error.statusCode === 404){
+      this.$router.push('/v/')
+    }
   }
 }
 </script>

@@ -3,7 +3,7 @@
 		<v-row>
 			<v-col cols="12" md="7">
 				<v-card>
-					<v-img :src="`http://127.0.0.1:8000${news.image}`" height='400'></v-img>
+					<v-img :src="`https://actions.uz${news.image}`" height='400'></v-img>
 						<div class="text-center">
 							<v-btn icon fab><v-icon>mdi-instagram</v-icon></v-btn>
 							<v-btn icon fab><v-icon>mdi-facebook</v-icon></v-btn>
@@ -25,7 +25,7 @@
 								<div class="pa-3">
 									<v-row>
 										<v-col cols="4">
-											<v-img :src="`http://127.0.0.1:8000${today.image}`" height="70"></v-img>
+											<v-img :src="`https://actions.uz${today.image}`" height="70"></v-img>
 										</v-col>
 										<v-col cols="6">
 											<h3>{{today.title}}</h3>
@@ -65,14 +65,14 @@
 			},
 		},
 		async asyncData({$axios, params}){
-			const news = await $axios.$get(`http://127.0.0.1:8000/api/site-view-single/${params.id}/`)
+			const news = await $axios.$get(`https://actions.uz/api/site-view-single/${params.id}/`)
 
 			return{
 				news: news
 			}
 		},
 		mounted(){
-			this.$axios.get('http://127.0.0.1:8000/api/site-view/')
+			this.$axios.get('https://actions.uz/api/site-view/')
 				.then(res => {
 					this.allNews = res.data
 				})

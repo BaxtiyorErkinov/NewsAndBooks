@@ -29,7 +29,7 @@
 		// },
 		mounted(){
 			try{
-				this.$axios.get('http://127.0.0.1:8000/api/get-user/', {
+				this.$axios.get('https://actions.uz/api/get-user/', {
 					headers: {
 	         		 Authorization:"Bearer " + this.$auth.$storage.getLocalStorage("token")
 	        	}

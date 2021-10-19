@@ -56,22 +56,22 @@
 									<v-container>								
 										<v-row class="my-2">
 											<v-col cols="6" md="4">
-												<v-img src="http://127.0.0.1:8000/static/footer-1.webp" />
+												<v-img src="https://actions.uz/static/images/footer-1.webp" />
 											</v-col>
 											<v-col cols="6" md="4">
-												<v-img src="http://127.0.0.1:8000/static/footer-2.jpg" />
+												<v-img src="https://actions.uz/static/images/footer-2.jpg" />
 											</v-col>
 											<v-col cols="6" md="4">
-												<v-img src="http://127.0.0.1:8000/static/footer-3.jpg" />
+												<v-img src="https://actions.uz/static/images/footer-3.jpg" />
 											</v-col>
 											<v-col cols="6" md="4">
-												<v-img src="http://127.0.0.1:8000/static/footer-4.jpg" />
+												<v-img src="https://actions.uz/static/images/footer-4.jpg" />
 											</v-col>
 											<v-col cols="6" md="4">
-												<v-img src="http://127.0.0.1:8000/static/footer-5.jpg" />
+												<v-img src="https://actions.uz/static/images/footer-5.jpg" />
 											</v-col>
 											<v-col cols="6" md="4">
-												<v-img src="http://127.0.0.1:8000/static/footer-6.jpg" />
+												<v-img src="https://actions.uz/static/images/footer-6.jpg" />
 											</v-col>
 										</v-row>
 									</v-container>

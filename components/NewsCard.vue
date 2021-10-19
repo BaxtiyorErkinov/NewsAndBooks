@@ -4,7 +4,7 @@
 			<v-row>
 				<v-col cols="12" md="4" v-for="news in filteredNews" :key="news.id">
 					<v-card flat class="grey lighten-3 pb-10" width="300">
-						<v-img width="300" :src="`http://127.0.0.1:8000${news.image}`"></v-img>
+						<v-img width="300" :src="`https://actions.uz${news.image}`"></v-img>
 						<div class="text-center mt-3">
 							<v-btn icon fab><v-icon>mdi-instagram</v-icon></v-btn>
 							<v-btn icon fab><v-icon>mdi-facebook</v-icon></v-btn>
@@ -43,7 +43,7 @@
 		},
 		methods:{
 			async getNews(){
-				await this.$axios.get('/site-view/')
+				await this.$axios.get('https://actions.uz/api/site-view/')
 					.then(res => {
 						this.allNews = res.data
 					})
