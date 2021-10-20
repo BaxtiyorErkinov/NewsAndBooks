@@ -115,7 +115,7 @@
 					refresh: this.$auth.$storage.getLocalStorage('refreshToken')
 				})
 				.then(res => {
-	        	this.$router.push('/v/auth')
+	        	this.$router.push('/auth')
 						this.$auth.$storage.removeLocalStorage('refreshToken')
 						this.$auth.$storage.removeLocalStorage('token')
 
