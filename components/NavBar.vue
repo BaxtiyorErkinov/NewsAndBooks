@@ -29,14 +29,14 @@
 						</div>			         
        			        <ul v-for="item in nav" :key="item.id">
 					        <li>
-					  			<nuxt-link exact :to="`/v/${item.link}`" class="hovered">{{item.title}}</nuxt-link>        		
+					  			<nuxt-link exact :to="`/${item.link}`" class="hovered">{{item.title}}</nuxt-link>        		
 					        </li>
 					    </ul>
 				    </v-toolbar-items>
 				    <v-spacer />
 		      	<div class="d-flex">
 					    <v-list-item v-if="auth" @click="logout" class="hidden-sm-and-down" link><span class="auth grey--text font-weight-bold"><v-icon>mdi-logout</v-icon>Logout</span></v-list-item>
-					    <v-list-item v-else class="hidden-sm-and-down" link to="/v/auth"><span class="auth grey--text font-weight-bold">Login / Register</span></v-list-item>
+					    <v-list-item v-else class="hidden-sm-and-down" link to="/auth"><span class="auth grey--text font-weight-bold">Login / Register</span></v-list-item>
 			    </div>
 				    <v-app-bar-nav-icon 
 				    	@click="drawer = !drawer"
@@ -53,7 +53,7 @@
 				        </v-list>
 				        <v-list class="text-start">
 				        	 <v-list-item v-if="auth" @click="logout"><span class="auth grey--text font-weight-bold"><v-icon>mdi-logout</v-icon>Logout</span></v-list-item>
-					    	<v-list-item v-else link to="/v/auth"><span class="auth font-weight-bold grey--text">Login / Register</span></v-list-item>
+					    	<v-list-item v-else link to="/auth"><span class="auth font-weight-bold grey--text">Login / Register</span></v-list-item>
 				        </v-list>
 		      	</v-navigation-drawer>
 	    </nav>

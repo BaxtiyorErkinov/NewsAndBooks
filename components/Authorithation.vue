@@ -184,7 +184,7 @@
                 username: this.form.userlogin,
                 password: this.form.password
               }).then(res => {        
-                this.$router.push('/v/profile')      
+                this.$router.push('/profile')      
                 this.$auth.$storage.setLocalStorage("token", res.data.access)
                 this.$auth.$storage.setLocalStorage("refreshToken", res.data.refresh)
               })
@@ -195,7 +195,7 @@
             .then(res => {
               this.$auth.$storage.setLocalStorage("token", res.data.access)
               this.$auth.$storage.setLocalStorage("refreshToken", res.data.refresh)
-              this.$router.push('/v/profile')
+              this.$router.push('/profile')
               console.log(this.$auth.storage.getLocalStorage('token'))
             }).catch(err => {
               this.$nuxt.$emit('auth', false)
