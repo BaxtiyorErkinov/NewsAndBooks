@@ -5,7 +5,7 @@
 					<div class="main">
 						<v-container>					
 							<v-row>
-								<v-col cols="6" md="4" class="pa-5">
+								<v-col cols="12" md="4" sm="6">
 									<v-card flat color="#022c46" class="white--text box mx-5">
 										<div>
 											<a class="font white--text name">Courses</a>
@@ -20,8 +20,10 @@
 										</div>
 									</v-card>
 								</v-col>
-								<v-col cols="6" md="4" center class="pa-5">
+								<v-col cols="12" md="4" sm="6" center class="pa-5">
 								<v-card flat color="#022c46" class="white--text mx-5">
+									<v-row>
+									<v-col cols="6" md="12">										
 										<div>
 											<a class="font white--text name">Explore</a>
 										</div>
@@ -40,10 +42,14 @@
 										<div>
 											<a class="font grey--text">Our News</a>
 										</div>
+									</v-col>
+									<v-col cols="6" md="12">										
 										<div class="my-5">
 											<a class="font grey--text d-block">Contact</a>
 											<a class="font grey--text">Register Now</a>
 										</div>
+									</v-col>										
+									</v-row>
 									</v-card>
 								</v-col>
 								<v-col cols="12" md="4" class="pa-5">
