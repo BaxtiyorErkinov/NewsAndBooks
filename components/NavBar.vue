@@ -46,7 +46,7 @@
 		</v-app-bar>
 		      	<v-navigation-drawer app v-model="drawer" color="white" width="150" right class="hidden-md-and-up">
 				        <v-list v-for="item in nav" :key="item.id">
-				         	<v-list-item link :to="item.link">
+				         	<v-list-item link :to="`/${item.link}`">
 				         		<span class="grey--text font-weight-bold">{{item.title}}</span>
 				         	</v-list-item>
 
