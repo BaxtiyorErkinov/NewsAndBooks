@@ -44,7 +44,7 @@
 				        class="hidden-md-and-up">
 			        </v-app-bar-nav-icon>
 		</v-app-bar>
-						<div class="center">
+						<div class="center hidden-sm-and-down">
 							
 		      			<Lines class="pos center"/>  	
 						</div>
