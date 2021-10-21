@@ -1,6 +1,6 @@
 <template>
-	<nav>
-		<v-app-bar fixed flat elevate-on-scroll>
+	<div>
+		<v-app-bar fixed flat scroll-threshold>
 			<v-toolbar-title class="black--text ml-3 mr-4">Kepso</v-toolbar-title>
 			    <v-spacer></v-spacer>
 			        <v-toolbar-items class="align-center hidden-sm-and-down"> 
@@ -44,6 +44,10 @@
 				        class="hidden-md-and-up">
 			        </v-app-bar-nav-icon>
 		</v-app-bar>
+						<div class="center">
+							
+		      			<Lines class="pos center"/>  	
+						</div>
 		      	<v-navigation-drawer app v-model="drawer" color="white" width="150" right class="hidden-md-and-up">
 				        <v-list v-for="item in nav" :key="item.id">
 				         	<v-list-item link :to="`/${item.link}`">
@@ -55,8 +59,8 @@
 				        	 <v-list-item v-if="auth" @click="logout"><span class="auth grey--text font-weight-bold"><v-icon>mdi-logout</v-icon>Logout</span></v-list-item>
 					    	<v-list-item v-else link to="/auth"><span class="auth font-weight-bold grey--text">Login / Register</span></v-list-item>
 				        </v-list>
-		      	</v-navigation-drawer>
-	    </nav>
+		      	</v-navigation-drawer>	
+	    </div>
 </template>
 
 <script>
@@ -164,5 +168,18 @@
  }
  .links{
  	margin: 0 auto;
+ }
+ .block{
+ 	display: block;
+ }
+ .pos{
+ 	position: absolute;
+ 	top: 1.9%;
+ 	z-index: 2;
+ 	/*background-color: red;*/
+ }
+ .center{
+ 	display: flex;
+ 	justify-content: center;
  }
 </style>

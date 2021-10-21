@@ -32,7 +32,7 @@
 											<p>{{today.text}}...</p>
 										</v-col>
 										<v-col cols="2">
-											<a :href="`${today.id}`" class="text-decoration-none"><v-btn fab icon text color="orange">
+											<a :href="`news/${today.id}`" class="text-decoration-none"><v-btn fab icon text color="orange">
 												<v-icon>mdi-arrow-right-bold-circle-outline</v-icon>
 											</v-btn></a>
 										</v-col>

@@ -1,11 +1,11 @@
 <template>
-	<div>	
+	<div>		    	
 	  <v-parallax
 	    dark
 	    :src="getImageUrl('back3.jpg')"
-	    jumbotron
 	    top
 	    width="100%"
+	    class="pa-0 px-0"
 	  >
 	    <v-row
 	      align="center"
