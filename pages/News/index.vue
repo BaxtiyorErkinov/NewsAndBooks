@@ -4,8 +4,7 @@
 	    dark
 	    :src="getImageUrl('back3.jpg')"
 	    top
-	    width="100%"
-	    class="pa-0 px-0"
+	    class="pa-0 px-0 ll"
 	  >
 	    <v-row
 	      align="center"
@@ -39,3 +38,7 @@
 		}
 	}
 </script>
+
+<style scoped>
+
+</style>

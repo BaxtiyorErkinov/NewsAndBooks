@@ -1,53 +1,61 @@
 <template>
 	<div>
 		<v-app-bar fixed flat scroll-threshold>
-			<v-toolbar-title class="black--text ml-3 mr-4">Kepso</v-toolbar-title>
-			    <v-spacer></v-spacer>
-			        <v-toolbar-items class="align-center hidden-sm-and-down"> 
-			        	<div>
-							<v-btn icon>
-								<v-hover color="orange" v-slot="{ hover }">
-									<v-icon size="23" tag="i" :color="hover ? 'orange' : 'gray'">mdi-twitter</v-icon>
-								</v-hover>
-
-							</v-btn>
-							<v-btn icon>
-								<v-hover color="orange" v-slot="{ hover }">
-									<v-icon size="23" :color="hover ? 'orange' : 'gray'">mdi-facebook</v-icon>
-								</v-hover>
-							</v-btn>
-							<v-btn icon>
-								<v-hover color="orange" v-slot="{ hover }">
-									<v-icon size="23" :color="hover ? 'orange' : 'gray'">mdi-instagram</v-icon>
-								</v-hover>
-							</v-btn>
-							<v-btn icon>
-								<v-hover color="orange" v-slot="{ hover }">
-									<v-icon size="23" :color="hover ? 'orange' : 'gray'">mdi-send-outline</v-icon>
-								</v-hover>
-							</v-btn>
-						</div>			         
-       			        <ul v-for="item in nav" :key="item.id">
-					        <li>
-					  			<nuxt-link exact :to="`/${item.link}`" class="hovered">{{item.title}}</nuxt-link>        		
-					        </li>
-					    </ul>
-				    </v-toolbar-items>
-				    <v-spacer />
-		      	<div class="d-flex">
-					    <v-list-item v-if="auth" @click="logout" class="hidden-sm-and-down" link><span class="auth grey--text font-weight-bold"><v-icon>mdi-logout</v-icon>Logout</span></v-list-item>
-					    <v-list-item v-else class="hidden-sm-and-down" link to="/auth"><span class="auth grey--text font-weight-bold">Login / Register</span></v-list-item>
-			    </div>
-				    <v-app-bar-nav-icon 
-				    	@click="drawer = !drawer"
-				        color="grey" 
-				        class="hidden-md-and-up">
-			        </v-app-bar-nav-icon>
+					<div class="navigation align-center">
+						<v-row>
+							<v-col cols="2" width="100">
+								<div class="items black--text ml-3 mr-4"><h1>Kepso</h1></div>
+							</v-col>
+							<v-col cols="8">
+						    <div class="align-center hidden-sm-and-down items"> 
+							     <div class="d-flex">
+											<v-btn icon>
+												<v-hover color="orange" v-slot="{ hover }">
+													<v-icon size="23" tag="i" :color="hover ? 'orange' : 'gray'">mdi-twitter</v-icon>
+												</v-hover>
+											</v-btn>
+											<v-btn icon>
+												<v-hover color="orange" v-slot="{ hover }">
+													<v-icon size="23" :color="hover ? 'orange' : 'gray'">mdi-facebook</v-icon>
+												</v-hover>
+											</v-btn>
+											<v-btn icon>
+												<v-hover color="orange" v-slot="{ hover }">
+													<v-icon size="23" :color="hover ? 'orange' : 'gray'">mdi-instagram</v-icon>
+												</v-hover>
+											</v-btn>
+											<v-btn icon>
+												<v-hover color="orange" v-slot="{ hover }">
+													<v-icon size="23" :color="hover ? 'orange' : 'gray'">mdi-send-outline</v-icon>
+												</v-hover>
+											</v-btn>
+										</div>			         
+			       			  <ul v-for="item in nav" :key="item.id" class="items">
+								        <li>
+								  			<nuxt-link exact :to="`/${item.link}`" class="hovered">{{item.title}}</nuxt-link>        		
+								        </li>
+								    </ul>
+							    </div>
+							</v-col>
+							<v-col cols="2">
+					      <div class="items buttons pa-2">
+					      		<v-btn v-if="auth" text class="grey--text hidden-sm-and-down">Logout<v-icon>mdi-logout</v-icon></v-btn>
+					      		<v-btn v-else text class="grey--text hidden-sm-and-down" link to="/auth">Login / Register</v-btn>
+						    </div>
+							</v-col>							
+								
+								<div class="pos mt-sm-12 mt-md-14 mt-12 ml-n1">
+				      			<Lines/>  	
+								</div>
+						</v-row>
+							    <v-app-bar-nav-icon 
+							    	@click="drawer = !drawer"
+							        color="grey" 
+							        class="hidden-md-and-up float-right"
+							        >
+						      </v-app-bar-nav-icon> 								
+					</div>
 		</v-app-bar>
-						<div class="center hidden-sm-and-down">
-							
-		      			<Lines class="pos center"/>  	
-						</div>
 		      	<v-navigation-drawer app v-model="drawer" color="white" width="150" right class="hidden-md-and-up">
 				        <v-list v-for="item in nav" :key="item.id">
 				         	<v-list-item link :to="`/${item.link}`">
@@ -165,21 +173,33 @@
  }
  .auth{
  	color: #81868a;
+
  }
  .links{
  	margin: 0 auto;
  }
- .block{
- 	display: block;
- }
  .pos{
+ 	display: flex;
  	position: absolute;
- 	top: 1.9%;
- 	z-index: 2;
+ 	width: 100%;
+ 	top: 4px;
  	/*background-color: red;*/
  }
- .center{
+ .center{	
+ 	position: absolute;
+ 	/*top: 33px;*/
+ 	max-height: 1px;
+ }
+ .navigation{
+ 	width: 100%;
  	display: flex;
- 	justify-content: center;
+ 	justify-content: space-between;	
+ }
+ .items{
+ 	display: flex;
+ }
+ .buttons{
+ 	margin-right: 150px;
+ 	width: 100%;
  }
 </style>
